@@ -1,3 +1,2 @@
 let Util=require('./gambling');
-
-Util.playGame();
+Util.resignDay();
