@@ -1,4 +1,4 @@
- var Promise = require('promise');
+var Promise = require('promise');
 var stake = 100;
 var betMoney = 1;
 
@@ -20,21 +20,20 @@ class Utility {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (stake == 50) {
-                    let answer = console.log(`Sorry!! You lost the game and ${stake} stakes \n`);
-                    resolve(answer);
+                    resolve();
                 } else {
-                    let winner = console.log(`Congratulations!! You won and your stakes is ${stake} \n`);
-                    reject(winner);
+                    reject();
                 }
             }, 1000);
-        })
+
+        });
     }
 
     match() {
-        this.stakesMatching().then(resolved => {
-            console.log(resolved)
-        }).catch(rejected => {
-            console.log(rejected)
+        this.stakesMatching().then(resolve => {
+            console.log(`Sorry!! You lost the game and ${stake} stakes \n`);
+        }).catch((reject) => {
+            console.log(`Congratulations!! You won and your stakes is ${stake} \n`);
         })
     }
 
@@ -44,8 +43,8 @@ class Utility {
         while (stake > 50 && stake < 150) {
             this.playGame();
         }
-        this.stakesMatching();
+        this.match();
     }
-        }
+}
 
 module.exports = new Utility();
