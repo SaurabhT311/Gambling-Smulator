@@ -1,11 +1,20 @@
+var stake=100;
+var betMoney=1;
+
 class Utility
 {
 
-    //starting game with $100
-    initialization()
+    playGame()
     {
-        var bet=1;
-        var stake=100;
+        var win=Math.floor(Math.random()*10 % 2);
+        if(win == 1)
+        {
+            stake=stake+betMoney;
+        }
+        else{
+            stake=stake-betMoney;
+                
+        }
     }
 
 }
