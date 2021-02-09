@@ -1,3 +1,3 @@
 let Util=require('./gambling');
 
-Util.initialization();
+Util.playGame();
